@@ -14,26 +14,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build release binary
-        run: swift build -c release
-
       - name: Extract version from tag
         id: version
         run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
-      - name: Package
-        run: |
-          BIN=$(swift build -c release --show-bin-path)/Hum
-          mkdir -p staging/Hum
-          cp "$BIN" staging/Hum/Hum
-          cp LICENSE README.md staging/Hum/
-          tar -czf Hum-macos-arm64-v${{ steps.version.outputs.version }}.tar.gz -C staging Hum
+      - name: Build and package
+        run: ./build.sh ${{ steps.version.outputs.version }}
+
+      - name: Rename DMG for release
+        run: mv deploy/release/Hum.dmg Hum-macos-arm64-v${{ steps.version.outputs.version }}.dmg
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Hum-macos-arm64
-          path: "*.tar.gz"
+          path: "*.dmg"
 
   release:
     needs: build

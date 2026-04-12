@@ -20,14 +20,11 @@ A minimal macOS audio player. One file, basic controls, nothing else.
 
 ## Install
 
-Download the latest `.tar.gz` from [Releases](https://github.com/H7O/Hum/releases), extract it, and move `Hum` wherever you like:
+1. Download the latest `.dmg` from [Releases](https://github.com/H7O/Hum/releases)
+2. Open the `.dmg` and drag **Hum.app** to your Applications folder (or anywhere you like)
+3. **First launch:** Right-click Hum.app → **Open** → click **Open** in the dialog
 
-```bash
-tar -xzf Hum-macos-arm64-v*.tar.gz
-mv Hum/Hum /usr/local/bin/   # or anywhere in your PATH
-```
-
-Then just run `Hum` from the terminal, or double-click the binary in Finder.
+> The right-click step is only needed once. macOS Gatekeeper blocks unsigned apps by default. After the first open, it launches normally.
 
 ## Build from Source
 
