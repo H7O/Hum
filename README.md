@@ -16,9 +16,22 @@ A minimal macOS audio player. One file, basic controls, nothing else.
 ## Requirements
 
 - macOS 13 Ventura or later
-- Swift 5.9+
+- Apple Silicon (M-series)
 
-## Build & Run
+## Install
+
+Download the latest `.tar.gz` from [Releases](https://github.com/H7O/Hum/releases), extract it, and move `Hum` wherever you like:
+
+```bash
+tar -xzf Hum-macos-arm64-v*.tar.gz
+mv Hum/Hum /usr/local/bin/   # or anywhere in your PATH
+```
+
+Then just run `Hum` from the terminal, or double-click the binary in Finder.
+
+## Build from Source
+
+Requires Swift 5.9+.
 
 ```bash
 # Debug
