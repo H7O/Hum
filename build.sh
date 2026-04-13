@@ -22,6 +22,7 @@ mkdir -p "$APP_BUNDLE/Contents/Resources"
 
 cp "$BIN" "$APP_BUNDLE/Contents/MacOS/$APP_NAME"
 cp "$SCRIPT_DIR/Resources/Info.plist" "$APP_BUNDLE/Contents/"
+cp "$SCRIPT_DIR/Resources/Hum.icns" "$APP_BUNDLE/Contents/Resources/"
 
 # Update version in Info.plist if provided
 if [[ "$VERSION" != "dev" ]]; then
