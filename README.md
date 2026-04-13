@@ -22,9 +22,13 @@ A minimal macOS audio player. One file, basic controls, nothing else.
 
 1. Download the latest `.dmg` from [Releases](https://github.com/H7O/Hum/releases)
 2. Open the `.dmg` and drag **Hum.app** to your Applications folder (or anywhere you like)
-3. **First launch:** Right-click Hum.app → **Open** → click **Open** in the dialog
+3. Before the first launch, open Terminal and run:
+   ```bash
+   xattr -cr /Applications/Hum.app
+   ```
+4. Double-click **Hum.app** — it will open normally from now on
 
-> The right-click step is only needed once. macOS Gatekeeper blocks unsigned apps by default. After the first open, it launches normally.
+> macOS quarantines apps downloaded from the internet. The `xattr -cr` command removes this quarantine flag. You only need to do this once.
 
 ## Build from Source
 
